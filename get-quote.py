@@ -1,4 +1,5 @@
 import random
+import itertools
 
 def primary():
   # print("Keep it logically awesome.")
@@ -7,9 +8,14 @@ def primary():
   quotes = f.readlines()
   f.close()
 
-  last = 13
+  last = 16
+  quote_rnd = random.randint(0, last-1)
+  for _ in itertools.repeat(None, quote_rnd):
+    rnd = random.randint(0, last)
+    print(quotes[rnd], end='')
+
   rnd = random.randint(0, last)
-  print(quotes[rnd])
+  print(quotes[rnd], end='')
 
 if __name__== "__main__":
   primary()
